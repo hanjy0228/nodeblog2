@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<form action="login" method="post" >
+<div>用户名： <input type="text" id="name" name="uname"/> </div>
+<div>密码： <input type="password" id="pwd" name="pwd"/> </div>
+<input type="submit" id="btn-login" value="登陆"/>
+</form>
+<script src="/javascripts/jquery-1.11.2.js"></script>
+<script type="text/javascript">
+    $('#btn-login').on('click',function(){
+
+        var name=$('#name').val();
+        var p1=$('#pwd').val();
+
+        $.get('user/login',{
+            name:name,
+            pwd:pwd
+        },function(data){
+             if(data == 'password error'){
+                $('#pwd').after("密码错误");
+            }else{
+                 res.render('index');
+            }
+        },'text')
+    })
+</script>
+</body>
+</html>

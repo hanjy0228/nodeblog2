@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>welcome</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <p>Welcome <%= name?name.username:'сн©м'%></p>
+
+    <ul>
+      <% for(var i= 0;i<blogs.length;i++){%>
+      <li>
+        <%= blogs[i].title %>
+      </li>
+      <%}%>
+    </ul>
+
+    <ul>
+      <% for(var i= 0;i<types.length;i++){%>
+      <li>
+        <%= types[i].type_name %>
+      </li>
+      <%}%>
+    </ul>
+  </body>
+</html>
